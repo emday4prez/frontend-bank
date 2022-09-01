@@ -1,8 +1,11 @@
-
-
+import {useContext} from 'react'
+import {UserContext} from '../context'
+ 
 function CreateAccount() {
+ const context = useContext(UserContext)
+
   return (
-    <div>CreateAccount</div>
+    <div>{JSON.stringify(context)}</div>
   )
 }
 
