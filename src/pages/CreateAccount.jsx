@@ -12,6 +12,9 @@ function CreateAccount() {
     const [hasInput, setHasInput] = useState(false);
     const [accountAdded, setAccountAdded] = useState(false);
     const [displaySuccessAlert, setDisplaySuccessAlert] = useState(false)
+    const [displayNameFail, setDisplayNameFail] = useState(false)
+    const [displayEmailFail, setDisplayEmailFail] = useState(false)
+    const [displayPasswordFail, setDisplayPasswordFail] = useState(false)
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -34,17 +37,27 @@ function CreateAccount() {
     }
 
     
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (name.trim().length < 1) {
-            alert('name is required.');
+            setDisplayNameFail(true)
+            setTimeout(() => {
+              setDisplayNameFail(false)
+            },3000)
             return;
         } else if (email.trim().length < 1) {
-            alert('E-mail is required.');
+            setDisplayEmailFail(true);
+            setTimeout(() => {
+                setDisplayEmailFail(false);
+            }, 3000);
             return;
         } else if (password.trim().length < 8) {
-            alert('Password must be at least 8 characters.');
+            setDisplayPasswordFail(true);
+            setTimeout(() => {
+                setDisplayPasswordFail(false);
+            }, 3000);
             return;
         } else {
             const newUser = {
@@ -67,11 +80,21 @@ function CreateAccount() {
 
     return (
         <div className="page">
-            {displaySuccessAlert && (
-                <Alert variant={'success'}>
-                    Successfully created user!
-                </Alert>
+        <div style={{minHeight: '75px'}}>
+          {displaySuccessAlert && (
+                <Alert variant={'success'}>Successfully created user!</Alert>
             )}
+            {displayNameFail && (
+                <Alert variant={'danger'}>Name is required!</Alert>
+            )}
+            {displayEmailFail && (
+                <Alert variant={'danger'}>Email is required!</Alert>
+            )}
+            {displayPasswordFail && (
+                <Alert variant={'danger'}>Password is required to be at least 8 characters!</Alert>
+            )}
+        </div>
+            
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Name</Form.Label>
