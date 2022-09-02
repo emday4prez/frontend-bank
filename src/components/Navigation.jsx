@@ -25,9 +25,6 @@ function Navigation() {
                         <LinkContainer to="/withdraw">
                             <Nav.Link>Withdraw</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/login">
-                                <Nav.Link>Log In</Nav.Link>
-                            </LinkContainer>
                         <LinkContainer to="/create-account">
                                 <Nav.Link>Create Account</Nav.Link>
                             </LinkContainer>
