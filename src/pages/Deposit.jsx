@@ -23,6 +23,7 @@ function Deposit() {
             setTimeout(() => {
                 setNegativeError(false);
             }, 3000);
+            
         } else if (typeof depositAmount !== 'number') {
             setNanError(true);
             setTimeout(() => {
@@ -39,6 +40,7 @@ function Deposit() {
                 setSuccessful(false);
             }, 3000);
         }
+        return
     };
 
     return (
