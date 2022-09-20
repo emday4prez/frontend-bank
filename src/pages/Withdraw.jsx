@@ -13,7 +13,6 @@ function Withdraw() {
     const [successful, setSuccessful] = useState(false);
 
     const onDepositChange = (e) => {
-        console.log(+e.target.value);
         setWithdrawAmount(+e.target.value);
     };
     const submitDeposit = (e) => {
@@ -33,7 +32,6 @@ function Withdraw() {
             balance = balance - +withdrawAmount;
 
             context.users[0].balance = +balance;
-            console.log(context.users[0].balance);
             setSuccessful(true);
             setTimeout(() => {
                 setSuccessful(false);
@@ -58,9 +56,9 @@ function Withdraw() {
                 )}
             </div>
             <Card>
-                <Card.Header>Withdraw Cash</Card.Header>
+                <Card.Header>Make A Withdrawal</Card.Header>
                 <Card.Body>
-                    <Card.Title>{`Account Balance: $${context.users[0].balance}`}</Card.Title>
+                    <Card.Title>{`Account Balance: $${context.users[0].balance.toLocaleString()}`}</Card.Title>
                     <Form style={{ minWidth: '300px' }}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Withdraw</Form.Label>

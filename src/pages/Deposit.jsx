@@ -13,7 +13,6 @@ function Deposit() {
     const [successful, setSuccessful] = useState(false);
 
     const onDepositChange = (e) => {
-        console.log(+e.target.value);
         setDepositAmount(+e.target.value);
     };
     const submitDeposit = (e) => {
@@ -35,6 +34,7 @@ function Deposit() {
 
             context.users[0].balance = +balance;
             console.log(context.users[0].balance);
+            setDepositAmount(0)
             setSuccessful(true);
             setTimeout(() => {
                 setSuccessful(false);
@@ -61,7 +61,7 @@ function Deposit() {
             <Card>
                 <Card.Header>Make A Deposit</Card.Header>
                 <Card.Body>
-                    <Card.Title>{`Account Balance: $${context.users[0].balance}`}</Card.Title>
+                    <Card.Title>{`Account Balance: $${context.users[0].balance.toLocaleString()}`}</Card.Title>
                     <Form style={{ minWidth: '300px' }}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Deposit</Form.Label>
