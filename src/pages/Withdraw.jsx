@@ -7,7 +7,7 @@ import { UserContext } from '../context';
 
 function Withdraw() {
     const context = useContext(UserContext);
-    const [withdrawAmount, setWithdrawAmount] = useState(0);
+    const [withdrawAmount, setWithdrawAmount] = useState(null);
     const [negativeError, setNegativeError] = useState(false);
     const [nanError, setNanError] = useState(false);
     const [successful, setSuccessful] = useState(false);
@@ -32,6 +32,7 @@ function Withdraw() {
             balance = balance - +withdrawAmount;
 
             context.users[0].balance = +balance;
+            setWithdrawAmount(0)
             setSuccessful(true);
             setTimeout(() => {
                 setSuccessful(false);
@@ -64,12 +65,12 @@ function Withdraw() {
                             <Form.Label>Withdraw</Form.Label>
                             <Form.Control
                                 type="number"
-                                placeholder="deposit amount"
+                                placeholder="withdraw amount"
                                 onChange={onDepositChange}
                                 value={withdrawAmount}
                             />
                             <Form.Text className="text-muted">
-                                Enter a number amount to withdraw.
+                                Withdraw amount must be a number.
                             </Form.Text>
                         </Form.Group>
                     </Form>

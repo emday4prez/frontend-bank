@@ -72,7 +72,7 @@ function Deposit() {
                                 value={depositAmount}
                             />
                             <Form.Text className="text-muted">
-                                Enter a number amount to deposit.
+                                Deposit amount must be a number.
                             </Form.Text>
                         </Form.Group>
                     </Form>
