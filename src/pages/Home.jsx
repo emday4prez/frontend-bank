@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 export default function Home() {
     return (
         <div className="page">
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '50vw'}}>
                 <Card.Img variant="top" src={piggyBank} />
                 <Card.Body>
                     <Card.Title>Frontend Banc</Card.Title>
