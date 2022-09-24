@@ -7,27 +7,39 @@ function Navigation() {
         <Navbar bg="primary" variant="dark" expand="lg">
             <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand>feBanc</Navbar.Brand>
+                    <Navbar.Brand title="Go to the main homepage.">
+                        feBanc
+                    </Navbar.Brand>
                 </LinkContainer>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <LinkContainer to="/">
-                            <Nav.Link>Home</Nav.Link>
+                            <Nav.Link title="Go to the main homepage.">
+                                Home
+                            </Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to="/deposit">
-                            <Nav.Link>Deposit</Nav.Link>
+                            <Nav.Link title="Add an amount to the guest account balance.">
+                                Deposit
+                            </Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/withdraw">
-                            <Nav.Link>Withdraw</Nav.Link>
+                            <Nav.Link title="Subtract an amount from the guest account balance.">
+                                Withdraw
+                            </Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/create-account">
-                            <Nav.Link>Create Account</Nav.Link>
+                            <Nav.Link title="Create a new account.">
+                                Create Account
+                            </Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/all-data">
-                            <Nav.Link>All Data</Nav.Link>
+                            <Nav.Link title="All of the data about every account.">
+                                All Data
+                            </Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
