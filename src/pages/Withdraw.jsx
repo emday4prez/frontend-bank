@@ -7,7 +7,7 @@ import { UserContext } from '../context';
 
 function Withdraw() {
     const context = useContext(UserContext);
-    const [withdrawAmount, setWithdrawAmount] = useState(null);
+    const [withdrawAmount, setWithdrawAmount] = useState(0);
     const [negativeError, setNegativeError] = useState(false);
     const [nanError, setNanError] = useState(false);
     const [successful, setSuccessful] = useState(false);
