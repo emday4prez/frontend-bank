@@ -7,7 +7,7 @@ import { UserContext } from '../context';
 
 function Deposit() {
     const context = useContext(UserContext);
-    const [depositAmount, setDepositAmount] = useState(0);
+    const [depositAmount, setDepositAmount] = useState(null);
     const [negativeError, setNegativeError] = useState(false);
     const [nanError, setNanError] = useState(false);
     const [successful, setSuccessful] = useState(false);
