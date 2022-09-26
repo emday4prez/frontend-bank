@@ -58,7 +58,13 @@ function Deposit() {
                     <Alert variant={'danger'}>Input must be a number!</Alert>
                 )}
             </div>
-            <Card>
+            <Card
+                style={{
+                    border: '0',
+                    boxShadow:
+                        'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
+                }}
+            >
                 <Card.Header>Make A Deposit</Card.Header>
                 <Card.Body>
                     <Card.Title>{`Account Balance: $${context.users[0].balance.toLocaleString()}`}</Card.Title>

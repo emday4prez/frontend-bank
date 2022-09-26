@@ -94,7 +94,7 @@ function CreateAccount() {
                     </Alert>
                 )}
             </div>
-            <Card>
+            <Card style={{border: '0', boxShadow: 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'}}>
                 <Card.Header as="h5">Create an Account</Card.Header>
                 <Card.Body>
                     <Form>
